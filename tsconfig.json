@@ -6,6 +6,7 @@
 				"src/*"
 			],
 		},
+		"esModuleInterop": true,
 		"inlineSourceMap": true,
 		"inlineSources": true,
 		"module": "ESNext",
@@ -24,7 +25,7 @@
 		]
 	},
 	"include": [
-		"**/*.ts"
+		"src/*.ts"
 	],
 	"types": [
 		"obsidian-typings"
