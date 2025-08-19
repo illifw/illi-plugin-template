@@ -1,5 +1,8 @@
+//#region imports
 import {
-	Plugin
+	App,
+	Plugin,
+	PluginManifest
 } from 'obsidian';
 
 import {
@@ -13,27 +16,54 @@ import {
 import {
 	Form
 } from './PluginSettings/Setup/Form';
+//#endregion imports
 
+//#region exports
 export default class MyPlugin extends Plugin {
 	settings: ISettings;
+		constructor(
+		app: App,
+		manifest: PluginManifest
+	) {
+		super(
+			app,
+			manifest
+		);
+		
+		this.settings = DEFAULT_SETTINGS;
+	}
 
-	async onload(): Promise<void> {
+	async onload(
+
+	): Promise<void> {
 		await this.loadSettings();
 
-		this.addSettingTab(new Form(this.app, this));
+		this.addSettingTab(new Form(this));
 	}
 
-	onunload(): void {
+	onunload(
+
+	): void {
 
 	}
 
-	async loadSettings(): Promise<this> {
-		this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
+	async loadSettings(
+
+	): Promise<this> {
+		this.settings = Object.assign(
+			{},
+			DEFAULT_SETTINGS,
+			await this.loadData()
+		);
+
 		return this;
 	}
 
-	async saveSettings(): Promise<this> {
+	async saveSettings(
+
+	): Promise<this> {
 		await this.saveData(this.settings);
 		return this;
 	}
 }
+//#endregion exports

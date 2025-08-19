@@ -1,20 +1,30 @@
+//#region imports
 import {
-	App,
 	PluginSettingTab,
 	Setting
 } from 'obsidian';
 
 import MyPlugin from '../../main';
+//#endregion imports
 
+//#region exports
 export class Form extends PluginSettingTab {
 	plugin: MyPlugin;
 
-	constructor(app: App, plugin: MyPlugin) {
-		super(app, plugin);
+	constructor(
+		plugin: MyPlugin
+	) {
+		super(
+			plugin.app,
+			plugin
+		);
+
 		this.plugin = plugin;
 	}
 
-	display(): void {
+	display(
+
+	): void {
 		const { containerEl } = this;
 
 		containerEl.empty();
@@ -31,3 +41,4 @@ export class Form extends PluginSettingTab {
 				}));
 	}
 }
+//#endregion exports
