@@ -19,7 +19,7 @@ import {
 //#endregion imports
 
 //#region exports
-export default class MyPlugin extends Plugin {
+export default class ILLIPluginTemplate extends Plugin {
 	settings: ISettings;
 		constructor(
 		app: App,

@@ -4,15 +4,15 @@ import {
 	Setting
 } from 'obsidian';
 
-import MyPlugin from '../../main';
+import ILLIPluginTemplate from '../../main';
 //#endregion imports
 
 //#region exports
 export class Form extends PluginSettingTab {
-	plugin: MyPlugin;
+	plugin: ILLIPluginTemplate;
 
 	constructor(
-		plugin: MyPlugin
+		plugin: ILLIPluginTemplate
 	) {
 		super(
 			plugin.app,
