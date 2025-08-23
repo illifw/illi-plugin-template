@@ -22,12 +22,41 @@
 			"ES5",
 			"ES6",
 			"ES7"
-		]
+		],
+		"resolveJsonModule": true,
+		"moduleDetection": "force",
+		"verbatimModuleSyntax": false,
+		"strict": true,
+		"noUncheckedIndexedAccess": true,
+		"noImplicitOverride": true,
+		"noPropertyAccessFromIndexSignature": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noEmitOnError": true,
+		"noEmit": true,
+		"skipLibCheck": true,
+		"skipDefaultLibCheck": true,
+		"exactOptionalPropertyTypes": true,
+		"preserveSymlinks": true,
+		"preserveConstEnums": true,
+		"preserveWatchOutput": true,
+		"outDir": "./dist",
+		"sourceMap": false,
+		"composite": true,
+		"declaration": true,
+		"declarationMap": true,
+		"emitDeclarationOnly": true,
+		"forceConsistentCasingInFileNames": true,
+		"removeComments": true
 	},
 	"include": [
-		"src/*.ts"
+		"src/**/*.ts",
+		"node_patches/**/*.d.cts"
 	],
 	"types": [
+		"obsidian",
 		"obsidian-typings"
 	]
 }

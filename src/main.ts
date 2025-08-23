@@ -2,8 +2,13 @@
 import {
 	App,
 	Plugin,
-	PluginManifest
+	PluginManifest,
+	TextComponent
 } from 'obsidian';
+
+import {
+	IDefaults
+} from './PluginSettings/IDefaults';
 
 import {
 	ISettings
@@ -33,7 +38,7 @@ export default class ILLIPluginTemplate extends Plugin {
 		this.settings = DEFAULT_SETTINGS;
 	}
 
-	async onload(
+	override async onload(
 
 	): Promise<void> {
 		await this.loadSettings();
@@ -41,13 +46,13 @@ export default class ILLIPluginTemplate extends Plugin {
 		this.addSettingTab(new Form(this));
 	}
 
-	onunload(
+	override onunload(
 
 	): void {
 
 	}
 
-	async loadSettings(
+	private async loadSettings(
 
 	): Promise<this> {
 		this.settings = Object.assign(
@@ -59,10 +64,49 @@ export default class ILLIPluginTemplate extends Plugin {
 		return this;
 	}
 
-	async saveSettings(
+	private async saveSettings(
 
 	): Promise<this> {
 		await this.saveData(this.settings);
+		return this;
+	}
+
+	async update(
+		newValue: string,
+		settingKey: keyof IDefaults,
+		field: TextComponent
+	): Promise<this>;
+	
+	async update(
+		newValue: string,
+		settingKey: keyof IDefaults,
+		field: TextComponent
+	): Promise<this> {
+		return this.updateDefault(newValue, settingKey as keyof IDefaults, field);
+	}
+
+	private async updateDefault(
+		newValue: string,
+		settingKey: keyof IDefaults,
+		field: TextComponent
+	): Promise<this> {
+		const oldValue: string = this.settings[settingKey];
+		//const defaultValue: string = DEFAULT_SETTINGS[settingKey];
+
+		newValue = newValue.trim();
+
+		if (0 === newValue.length) {
+			newValue = oldValue;
+			field.setValue(newValue);
+		}
+
+		if (newValue === oldValue) {
+			return this;
+		}
+
+		this.settings[settingKey] = newValue;
+		await this.saveSettings();
+
 		return this;
 	}
 }
