@@ -98,8 +98,9 @@ export default class ILLIPluginTemplate extends Plugin {
 
 		if (0 === newValue.length) {
 			newValue = oldValue;
-			field.setValue(newValue);
 		}
+		
+		field.setValue(newValue);
 
 		if (newValue === oldValue) {
 			return this;
