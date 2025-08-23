@@ -77,12 +77,22 @@ export default class ILLIPluginTemplate extends Plugin {
 		settingKey: keyof IDefaults,
 		field: TextComponent
 	): Promise<this>;
+
+	// async update(
+	// 	newValue: string,
+	// 	settingKey: keyof IOther,
+	// 	field: TextComponent
+	// ): Promise<this>;
 	
 	async update(
 		newValue: string,
-		settingKey: keyof IDefaults,
+		settingKey: keyof ISettings,
 		field: TextComponent
 	): Promise<this> {
+		//return settingKey in OTHER_SETTINGS
+		//	? this.updateOther(newValue, settingKey as keyof IOther, field)
+		//	: this.updateDefault(newValue, settingKey as keyof IDefaults, field);
+
 		return this.updateDefault(newValue, settingKey as keyof IDefaults, field);
 	}
 

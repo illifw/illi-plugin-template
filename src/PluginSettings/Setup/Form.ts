@@ -1,7 +1,8 @@
 //#region imports
 import {
 	PluginSettingTab,
-	Setting
+	Setting,
+	TextComponent
 } from 'obsidian';
 
 import ILLIPluginTemplate from '../../main';
@@ -32,10 +33,10 @@ export class Form extends PluginSettingTab {
 		new Setting(containerEl)
 			.setName('Setting #1')
 			.setDesc('It\'s a secret')
-			.addText(text => text
+			.addText((text: TextComponent): TextComponent => text
 				.setPlaceholder('Enter your secret')
 				.setValue(this.plugin.settings.mySetting)
-				.onChange(async (value) => {
+				.onChange(async (value: string) => {
 					this.plugin.settings.mySetting = value;
 					await this.plugin.update(
 						value,
