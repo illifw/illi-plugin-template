@@ -26,7 +26,8 @@ import {
 //#region exports
 export default class ILLIPluginTemplate extends Plugin {
 	settings: ISettings;
-		constructor(
+	
+	constructor(
 		app: App,
 		manifest: PluginManifest
 	) {
