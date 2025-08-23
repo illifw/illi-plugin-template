@@ -1,17 +1,17 @@
 //#region imports
 import {
-	App,
+	type App,
+	type PluginManifest,
 	Plugin,
-	PluginManifest,
 	TextComponent
 } from 'obsidian';
 
 import {
-	IDefaults
+	type IDefaults
 } from './PluginSettings/IDefaults';
 
 import {
-	ISettings
+	type ISettings
 } from './PluginSettings/ISettings';
 
 import {
