@@ -52,8 +52,7 @@
 		"removeComments": true
 	},
 	"include": [
-		"src/**/*.ts",
-		"node_patches/**/*.d.cts"
+		"src/**/*.ts"
 	],
 	"types": [
 		"obsidian",

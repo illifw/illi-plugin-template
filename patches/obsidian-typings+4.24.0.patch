@@ -1,0 +1,22 @@
+diff --git a/node_modules/obsidian-typings/dist/cjs/types.d.cts b/node_modules/obsidian-typings/dist/cjs/types.d.cts
+index 765ef04..bfb77d2 100644
+--- a/node_modules/obsidian-typings/dist/cjs/types.d.cts
++++ b/node_modules/obsidian-typings/dist/cjs/types.d.cts
+@@ -24925,7 +24925,7 @@ export interface PropertyInfo {
+ 	/**
+ 	 * Usage count of property.
+ 	 */
+-	count: number;
++	occurrences: number; // ex: count
+ 	/**
+ 	 * Name of property.
+ 	 */
+@@ -24933,7 +24933,7 @@ export interface PropertyInfo {
+ 	/**
+ 	 * Type of property.
+ 	 */
+-	type: string;
++	widget: string; // ex: type
+ }
+ /**
+  * @todo Documentation incomplete.
