@@ -44,7 +44,7 @@
 		"preserveWatchOutput": true,
 		"outDir": "./dist",
 		"sourceMap": false,
-		"composite": true,
+		"composite": false,
 		"declaration": true,
 		"declarationMap": true,
 		"emitDeclarationOnly": true,
